@@ -2,14 +2,18 @@
   <div class="header">
     <div class="info">
       <div class="info__title-bar">
-        <div class="info__go-back">Edit YearBook Builder</div>
+        <div class="info__go-back">
+          <font-icon icon="long-arrow-alt-left" />
+          Exit YearBook Builder
+        </div>
         <div class="info__title">SMS YearBook 2021</div>
-        <div class="info__help">Help</div>
+        <div class="info__help">
+          <font-icon icon="question-circle" />
+          Help
+        </div>
       </div>
       <div class="info__catagory grid-3-cells">
-        <Button routeName="PrintedEdition" @click="handleClick"
-          >PRINTED EDITION</Button
-        >
+        <Button routeName="PrintedEdition">PRINTED EDITION</Button>
         <Button routeName="Manager">MANAGER</Button>
         <Button routeName="DigitalEdition">DIGITAL EDITION</Button>
       </div>
@@ -53,19 +57,11 @@ export default {
   components: {
     Button
   },
-  methods: {
-    handleClick() {
-      // console.log('hi');
-      // console.log(this.buttons);
-    },
-    deActiveQuantity() {
-      this.quantity.forEach(q => (q.isDisable = true));
-    }
-  },
   watch: {
     $route(to) {
-      this.deActiveQuantity();
-      this.quantity.find(q => q.route === to.path).isDisable = false;
+      this.quantity.forEach(
+        q => (q.isDisable = q.route === to.path ? false : true)
+      );
     }
   }
 };
@@ -73,13 +69,12 @@ export default {
 
 <style scoped lang="scss">
 .info {
-  max-width: 1140px;
   margin-inline: auto;
   font-size: 1.2rem;
 
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  row-gap: 5px;
+  // row-gap: 5px;
   // draw border bottom
   & > div {
     border-bottom: 1px solid rgb(182, 182, 182);
@@ -89,7 +84,7 @@ export default {
     display: flex;
     justify-content: space-between;
     background-color: $color-primary-light;
-    height: 40px;
+    // height: 40px;
 
     & > div {
       display: flex;
@@ -104,11 +99,22 @@ export default {
   &__go-back {
     color: #fff;
     background-color: $color-primary;
-    padding-inline: 5px;
-    font-size: 0.9rem;
+    padding: 5px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
   }
   &__go-back {
-    width: 100px;
+    max-width: 90px;
+  }
+  &__help > svg {
+    margin-bottom: 5px;
+    padding-inline: 15px;
+  }
+
+  &__catagory {
+    background-color: #fff;
   }
 
   &__quantity {
@@ -116,10 +122,27 @@ export default {
       color: $color-primary;
       font-size: 0.9rem;
       margin-inline: 1rem;
+      position: relative;
     }
     span.disabled {
       color: $color-primary-light;
     }
+  }
+  // add vertical bars
+  &__catagory a:not(:last-child)::after,
+  &__quantity-value:not(:last-of-type)::after {
+    content: '';
+    height: 15px;
+    width: 2px;
+    background-color: rgb(194, 191, 191);
+    position: absolute;
+    top: 0;
+    right: -34px;
+  }
+  &__catagory a:not(:last-child)::after {
+    right: -19px;
+    width: 1px;
+    height: 25px;
   }
 }
 
