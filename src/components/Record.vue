@@ -47,17 +47,25 @@ export default {
     width: 130px;
     height: 5px;
     border-radius: 5px;
-    background-image: linear-gradient(
-      to right,
-      #ddd 33%,
-      #fff 33%,
-      #fff 34%,
-      #ddd 34%,
-      #ddd 66%,
-      #fff 66%,
-      #fff 67%,
-      #ddd 67%
-    );
+    background-color: #ddd;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background-color: #fff;
+    }
+
+    &::before {
+      left: 33.3%;
+    }
+    &::after {
+      top: 0;
+      left: 66.6%;
+    }
 
     &-bar {
       height: 100%;

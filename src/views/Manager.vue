@@ -1,6 +1,6 @@
 <template>
   <div class="manager">
-    <Record v-for="record in data" :key="record.id" :record="record" />
+    <Record v-for="record in allData" :key="record.id" :record="record" />
     <Button class="expand">Expand All Sections</Button>
     <Button class="active">
       <font-icon icon="plus-circle" />
@@ -10,25 +10,19 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Record from '../components/Record';
 import Button from '../components/Button';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
     Record,
     Button
   },
-  data() {
-    return {
-      data: null
-    };
-  },
+  methods: mapActions(['fetchData']),
+  computed: mapGetters(['allData']),
   mounted() {
-    axios
-      .get('https://mocki.io/v1/af96501c-cf82-4c55-bc0f-39253de660f4')
-      .then(({ data }) => (this.data = data))
-      .catch(err => console.log(err));
+    this.fetchData();
   }
 };
 </script>
@@ -37,7 +31,6 @@ export default {
 .manager {
   padding: 10px 25px;
   text-align: left;
-
   .expand {
     margin-top: 1rem;
     margin-right: 0.5rem;
