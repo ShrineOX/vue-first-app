@@ -8,10 +8,10 @@ import catagory from '../constant';
 
 const routes = [
   { path: '/', redirect: { name: catagory.MANAGER } },
-  { path: '/manager', component: PrintedEdidtion, name: catagory.MANAGER },
+  { path: '/manager', component: Manager, name: catagory.MANAGER },
   {
     path: '/printed-edition',
-    component: Manager,
+    component: PrintedEdidtion,
     name: catagory.PRINTED_EDITION
   },
   {
