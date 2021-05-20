@@ -22,18 +22,13 @@ a {
   font-size: 0.8rem;
   font-family: inherit;
   transition: transform 0.2s;
+
   // disable style
   color: $color-primary-light;
   background-color: $color-text;
   border: 1px solid $color-primary-light;
   position: relative;
 
-  // &:hover {
-  //   transform: translateY(-3px);
-  // }
-  // &:active {
-  //   transform: translateY(3px);
-  // }
   &.router-link-active {
     color: $color-text;
     background-color: $color-bg;

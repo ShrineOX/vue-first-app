@@ -13,9 +13,9 @@
         </div>
       </div>
       <div class="info__catagory grid-3-cells">
-        <Button routeName="PrintedEdition">PRINTED EDITION</Button>
-        <Button routeName="Manager">MANAGER</Button>
-        <Button routeName="DigitalEdition">DIGITAL EDITION</Button>
+        <Button routeName="printedEdition">PRINTED EDITION</Button>
+        <Button routeName="manager">MANAGER</Button>
+        <Button routeName="digitalEdition">DIGITAL EDITION</Button>
       </div>
       <div class="info__quantity grid-3-cells">
         <span

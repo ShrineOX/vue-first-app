@@ -4,14 +4,20 @@ import Manager from '../views/Manager';
 import DigitalEdition from '../views/DigitalEdition';
 import PrintedEdidtion from '../views/PrintedEdidtion';
 
+import catagory from '../constant';
+
 const routes = [
-  { path: '/', redirect: { name: 'Manager' } },
-  { path: '/manager', component: PrintedEdidtion, name: 'Manager' },
-  { path: '/printed-edition', component: Manager, name: 'PrintedEdition' },
+  { path: '/', redirect: { name: catagory.MANAGER } },
+  { path: '/manager', component: PrintedEdidtion, name: catagory.MANAGER },
+  {
+    path: '/printed-edition',
+    component: Manager,
+    name: catagory.PRINTED_EDITION
+  },
   {
     path: '/digital-edition',
     component: DigitalEdition,
-    name: 'DigitalEdition'
+    name: catagory.DIGITAL_EDITION
   }
 ];
 
