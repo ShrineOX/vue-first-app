@@ -13,9 +13,9 @@
         </div>
       </div>
       <div class="info__catagory grid-3-cells">
-        <Button routeName="printedEdition">PRINTED EDITION</Button>
-        <Button routeName="manager">MANAGER</Button>
-        <Button routeName="digitalEdition">DIGITAL EDITION</Button>
+        <link-button routeName="printedEdition">PRINTED EDITION</link-button>
+        <link-button routeName="manager">MANAGER</link-button>
+        <link-button routeName="digitalEdition">DIGITAL EDITION</link-button>
       </div>
       <div class="info__quantity grid-3-cells">
         <span
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import Button from './Button';
+import LinkButton from './LinkButton';
 
 export default {
   name: 'Header',
@@ -55,7 +55,7 @@ export default {
     };
   },
   components: {
-    Button
+    LinkButton
   },
   watch: {
     $route(to) {

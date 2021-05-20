@@ -1,5 +1,5 @@
 <template>
-  <button><slot></slot></button>
+  <router-link :to="{ name: routeName }" exact><slot></slot></router-link>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-button {
+a {
   $color-text: #fff;
   $color-bg: $color-primary;
 
@@ -29,7 +29,7 @@ button {
   border: 1px solid $color-primary-light;
   position: relative;
 
-  &.active {
+  &.router-link-active {
     color: $color-text;
     background-color: $color-bg;
     border: 1px solid $color-primary-light;

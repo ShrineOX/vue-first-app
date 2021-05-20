@@ -4,12 +4,21 @@ import router from './router';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faCaretRight,
+  faEllipsisH,
   faLongArrowAltLeft,
+  faPlusCircle,
   faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faQuestionCircle, faLongArrowAltLeft);
+library.add(
+  faQuestionCircle,
+  faLongArrowAltLeft,
+  faCaretRight,
+  faEllipsisH,
+  faPlusCircle
+);
 
 createApp(App)
   .use(router)
