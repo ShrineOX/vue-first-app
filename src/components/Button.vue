@@ -18,10 +18,10 @@ button {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  text-decoration: none;
   font-size: 0.8rem;
   font-family: inherit;
   transition: transform 0.2s;
+  text-align: center;
 
   // disable style
   color: $color-primary-light;

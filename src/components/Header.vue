@@ -71,10 +71,9 @@ export default {
 .info {
   margin-inline: auto;
   font-size: 1.2rem;
-
+  text-align: center;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  // row-gap: 5px;
   // draw border bottom
   & > div {
     border-bottom: 1px solid rgb(182, 182, 182);
@@ -84,7 +83,6 @@ export default {
     display: flex;
     justify-content: space-between;
     background-color: $color-primary-light;
-    // height: 40px;
 
     & > div {
       display: flex;

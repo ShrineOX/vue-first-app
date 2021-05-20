@@ -19,6 +19,7 @@ a {
   padding: 5px 10px;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   font-size: 0.8rem;
   font-family: inherit;
   transition: transform 0.2s;
